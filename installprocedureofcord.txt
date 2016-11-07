@@ -1,0 +1,147 @@
+While following https://github.com/opencord/cord/blob/cord-1.0/docs/quickstart.md, executed “vagrant up corddev”. It gave following message:
+first install virtualbox
+
+install git
+$sudo apt-get install git
+
+install java 
+First, update the package index.
+$sudo apt-get update
+Next, install Java. Specifically, this command will install the Java Runtime Environment (JRE).
+$sudo apt-get install default-jre
+You can install the JDK with the following command:
+$sudo apt-get install default-jdk
+Oracle JDK 9
+To install JDK 9, use the following command:
+$sudo apt-get install oracle-java9-installer
+Managing Java
+$sudo update-alternatives --config java
+Setting the JAVA_HOME Environment Variable
+sudo nano /etc/environment
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+$source /etc/environment
+$echo $JAVA_HOME
+
+first update the vagrant1.4 to vagrant1.8
+1)download vagrant1.8
+2)after u install
+how to install .deb or debin file
+$sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb
+
+$vagrant init ubuntu/trusty64
+$vagrant up --provider virtualbox
+
+$ vagrant up corddev
+
+Bringing machine 'corddev' up with 'virtualbox' provider...
+
+==> corddev: Importing base box 'ubuntu/trusty64'...
+
+==> corddev: Matching MAC address for NAT networking...
+
+==> corddev: Checking if box 'ubuntu/trusty64' is up to date...
+
+…
+
+==> corddev: TASK [docker : Debian docker-py is present] ************************************
+
+==> corddev: changed: [localhost]
+
+==> corddev:
+
+==> corddev: TASK [docker : Debian files are present] ***************************************
+
+==> corddev: changed: [localhost]
+
+==> corddev:
+
+==> corddev: TASK [docker : Debian Daemon is reloaded] **************************************
+
+==> corddev: skipping: [localhost]
+
+==> corddev:
+
+==> corddev: TASK [docker : vagrant user is added to the docker group] **********************
+
+==> corddev: changed: [localhost]
+
+==> corddev:
+
+==> corddev: TASK [docker : Debian Docker service is restarted] *****************************
+
+==> corddev: fatal: [localhost]: FAILED! => {"changed": false, "failed": true, "msg": "start: Job failed to start\n"}
+
+==> corddev:
+
+==> corddev: NO MORE HOSTS LEFT *************************************************************
+
+==> corddev:    to retry, use: --limit @/cord/ansible/corddev.retry
+
+==> corddev:
+
+==> corddev: PLAY RECAP *********************************************************************
+
+==> corddev: localhost                  : ok=13   changed=11   unreachable=0    failed=1
+
+The SSH command responded with a non-zero exit status. Vagrant
+
+assumes that this means the command failed. The output for this command
+
+should be in the log above. Please read the output to determine what
+
+went wrong.
+
+ 
+
+ 
+
+However, I am still able to ssh to corddev.
+
+ 
+
+mqureshi@SJC-MQURESHI MINGW64 ~/cord (cord-1.0)
+
+$ vagrant ssh corddev
+
+Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-96-generic x86_64)
+
+ 
+
+* Documentation:  https://help.ubuntu.com/
+
+ 
+
+System information disabled due to load higher than 1.0
+
+ 
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+
+    http://www.ubuntu.com/business/services/cloud
+
+ 
+
+0 packages can be updated.
+
+0 updates are security updates.
+
+ 
+
+New release '16.04.1 LTS' available.
+
+Run 'do-release-upgrade' to upgrade to it.
+
+ 
+
+ 
+
+vagrant@corddev:$
+
+
+
+
+Is it safe to proceed and disregard the error message, or I should fix it first  to avoid any problems later.
+
+
+https://wiki.opencord.org/display/CORD/Build+CORD-in-a-Box
+ 
