@@ -1,0 +1,49 @@
+https://github.com/opencord/cord/blob/cord-1.0/docs/quickstart.md
+
+repo init -u https://gerrit.opencord.org/manifest -b master -g build,onos
+
+targetserverip:192.168.122.130
+
+onos ip address:192.168.122.110:8181/onos/ui/login.html
+username:karaf
+passwd:karaf
+
+juju-1.cord.lab ip address:192.168.122.10
+
+192.168.122.80
+
+
+start openstack
+see the vms
+why onos has two instances running
+and explore the xos front end
+
+
+
+nova-compute-1.cord.lab (192.168.122.140) ----> No GUI coming UP
+rabbitmq-server-1.cord.lab (192.168.122.100) ----> No GUI coming UP
+juju-1.cord.lab (192.168.122.10) ----> No GUI coming UP
+percona-cluster-1.cord.lab (192.168.122.50) ----> No GUI coming UP
+
+onos-fabric-1.cord.lab (192.168.122.120) ----> GUI coming UP(192.168.122.120:8181/onos/ui/login.html)
+onos-cord-1.cord.lab (192.168.122.110) ----> GUI coming UP(192.168.122.110:8181/onos/ui/login.html)
+glance-1.cord.lab (192.168.122.30) ----> GUI coming UP(Apache Default page)
+ceilometer-1.cord.lab (192.168.122.20) ----> GUI coming UP(Apache Default page)
+keystone-1.cord.lab (192.168.122.40) ----> GUI coming UP(Apache Default page)
+neutron-api-1.cord.lab (192.168.122.70) ----> GUI coming UP(Apache Default page)
+nova-cloud-controller-1.cord.lab (192.168.122.80) ----> GUI coming UP(Apache Default page)
+openstack-dashboard-1.cord.lab (192.168.122.90) ----> GUI coming UP (http://192.168.122.90/horizon/)
+xos-1.cord.lab (192.168.122.130) ----> GUI coming UP(CORD Front End)
+username:padmin@vicci.org
+password:letmein
+
+nagios-1.cord.lab (192.168.122.60) ----> GUI coming UP(Requires Auth)
+
+openstack:http://192.168.122.90/horizon/
+username:admin
+Password:VeryLongKeystoneAdminPassword
+
+xos guide
+http://guide.xosproject.org/opsguide/#service-vms
+
+
